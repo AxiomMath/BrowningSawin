@@ -1,0 +1,16 @@
+{
+    "challenge_module": "Challenge.Basic",
+    "solution_module": "Solution.Basic",
+    "theorem_names": [
+        "BrowningSawin.Challenge.thm_main",
+        "BrowningSawin.Challenge.thm_positive",
+        "BrowningSawin.Challenge.thm_bs_conjecture",
+        "BrowningSawin.Challenge.thm_absolute_irred"
+    ],
+    "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+    ],
+    "enable_nanoda": true
+}

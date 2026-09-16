@@ -1,0 +1,32 @@
+name = "BrowningSawin"
+defaultTargets = ["BrowningSawin"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+
+# Mathlib's standard linter set. The `weak.` prefix means Lake will not fail if a
+# revision does not define the option.
+weak.linter.mathlibStandardSet = true
+
+# The rev below is Mathlib's `v4.34.0-rc2` tag, and `lean-toolchain` names the toolchain that rev
+# asks for. The two must agree. To bump: take a Mathlib tag, read its `lean-toolchain`, set both,
+# and re-resolve every transitive rev in `lake-manifest.json` in the same commit.
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "85e3a25e006c35636f0e53b0e9296caca2685bc0"
+
+[[lean_lib]]
+name = "BrowningSawin"
+
+# The comparator pair. Deliberately NOT in defaultTargets: `Challenge` carries a
+# permanent `sorry` (its statements are the artifact), and `lake lint` derives its
+# scope from the default targets. The comparator builds both modules itself.
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
